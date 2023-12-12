@@ -27,14 +27,12 @@ services:
     build:
       context: .
       dockerfile: migration_local.Dockerfile
-    restrart: on-failure
     environment:
       - DB_HOST=pg-local
 
   migration_prod:
     build:
       context: .
-      dockerfile: migration_local.Dockerfile
-    restrart: on-failure
+      dockerfile: migration_prod.Dockerfile
     environment:
       - DB_HOST=pg-prod
